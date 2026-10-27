@@ -1,0 +1,16 @@
+services:
+  agent:
+    image: storr-agent
+    volumes:
+      - ${EVE_PATH:-../eve}:/workspace
+    environment:
+      - LLM_PROVIDER=ollama
+      - OPENAI_BASE_URL=http://host.docker.internal:11434/v1
+      - OPENAI_API_KEY=ollama
+      - OPENAI_MODEL=qwen3.6:35b
+      - WORKSPACE_PATH=/workspace
+      - RULES_PATH=/agent/rules
+      - LLM_TEMPERATURE=0.3
+      - TERMINAL_MODE=local
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

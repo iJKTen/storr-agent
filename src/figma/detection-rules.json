@@ -1,0 +1,63 @@
+[
+  {
+    "module": "product-card.md",
+    "namePatterns": ["product", "card"],
+    "yamlPatterns": ["HoverImage", "\\{\\{product\\."],
+    "hookFiles": [
+      "app/lib/hooks/useProductCard.ts",
+      "app/lib/product/product.ts"
+    ]
+  },
+  {
+    "module": "swatches.md",
+    "namePatterns": ["swatch", "color"],
+    "yamlPatterns": ["colorEllipse", "selectedBorder"]
+  },
+  {
+    "module": "cart.md",
+    "namePatterns": ["cart", "minicart"],
+    "yamlPatterns": ["\\{\\{product\\.variant\\."]
+  },
+  {
+    "module": "pdp.md",
+    "namePatterns": ["pdp"],
+    "yamlPatterns": [],
+    "hookFiles": [
+      "app/lib/product/images.ts",
+      "app/lib/product/product.ts",
+      "app/lib/hooks/useProductCard.ts",
+      "app/components/ColorSwatch/index.tsx"
+    ]
+  },
+  {
+    "module": "images.md",
+    "namePatterns": ["hero", "banner"],
+    "yamlPatterns": ["imageRef", "type:\\s*IMAGE"]
+  },
+  {
+    "module": "responsive.md",
+    "namePatterns": [],
+    "yamlPatterns": ["Device"]
+  },
+  {
+    "module": "scaffold.md",
+    "namePatterns": ["header", "footer", "aside", "nav", "menu"],
+    "yamlPatterns": [],
+    "hookFiles": ["app/components/Aside/index.tsx"]
+  },
+  {
+    "module": "layout.md",
+    "namePatterns": [],
+    "yamlPatterns": ["sizing[\\s\\S]*?(?:fill|fixed)"]
+  },
+  {
+    "module": "svg-assets.md",
+    "namePatterns": ["logo", "icon", "asset", "favicon"],
+    "yamlPatterns": ["type:\\s*IMAGE-SVG", "assetPath:"]
+  },
+  {
+    "module": "carousel.md",
+    "namePatterns": [],
+    "yamlPatterns": ["package:\\s*swiper", "\\{\\{product\\.images\\}\\}"]
+  }
+]
